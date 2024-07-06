@@ -11,7 +11,7 @@ Color darkgreen = { 43,51,24,255 };
 int cellsize = 30;
 int cellcount = 25;				//30x25=750 so window size of 750 is covered...25 times 30 pixels...30 pixels make 1 cell. representing the entire window in a grid
 
-float offset = 75;
+float offset = 75;				//this offset is used for the margin of the game window 
 
 double lastUpdateTime = 0;				//keep tracks of the time at which the last update of the snake occured. it is initialised to zero when the game starts
 
@@ -128,11 +128,6 @@ public:
 		position = GenRandomPos(snakeBody);
 	}
 
-	/*~Food()
-	{
-		UnloadTexture(texture);
-	}*/
-
 	void Draw()
 	{
 		//DrawRectangle(offset + position.x * cellsize, offset + position.y * cellsize, cellsize, cellsize, darkgreen);   //5 arguments (x and y coordinates, width and height, color)
@@ -156,6 +151,11 @@ public:
 			position = GenRandomCell();							//if yes then GenRandomCell() will be called continuously
 		}
 		return position;
+	}
+
+	~Food()
+	{
+		UnloadTexture(texture);
 	}
 };
 
