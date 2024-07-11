@@ -75,4 +75,28 @@ In order to control the snake's movement, we added keyboard controls to the game
 To improve code organization and make it easier to manage in the future, we created a
 Game class to hold the snake and food objects, as well as various methods. The Game class serves as a container for all the elements of our game such as the snake, food, and game state. It holds methods that manage the game's logic such as updating the snake's position, checking for collisions, etc. 
 
+## **Step 6: Making the Snake eat the Food**
+
+If the snake’s head cell and the food cell are the same for every update of the game, the snake will eat the food, and we have to create another food object in another random location. 
+<br> This checking is done using the void checkEatFood() { } function in the game class.
+
+## **Step 7: Making the Snake grow longer**
+
+When the snake eats food, we will add a new segment to the beginning of its body and not move the snake for that call of the update method to create a more natural visual effect.
+
+## **Step 8: Checking for Collisions**
+
+If the position of the head of the snake is out of the grid at the x and y axis, a collision has occurred so we end the game, i.e. GameOver method in the game class.
+<br>When the game is over, the player can again start playing by pressing the "->" button and the snake will move to its original position. To move it to the original position, we created the GameRestart() function.
+
+To pause the game until the player restarts the game, we add another attribute to game class, i.e. the boolean variable "running". It's value is true if the game runs, and false if the game is stopped. 
+
+Next is the checking if the snake's head touches it's body. To do this we create a copy of the snake body. Then from the deque we remove the head, the first element. If the snake’s head is in this deque, it means that the head has collided with the tail, and the game is over. 
+
+## **Step 9: Adding Score**
+
+In the game class we add integer variable score initialised to 0. The score will be increased by one every time the snake eats a food object. So it is included in the checkEatFood() function.
+
+Finally, the game is complete.
+
 
