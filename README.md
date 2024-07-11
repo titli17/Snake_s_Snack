@@ -99,4 +99,7 @@ In the game class we add integer variable score initialised to 0. The score will
 
 Finally, the game is complete.
 
+![image](https://github.com/titli17/Snake_s_Snack/assets/96014974/af3f59c0-452e-44fa-b6e0-e5f43d4e39b3)
+
+
 
